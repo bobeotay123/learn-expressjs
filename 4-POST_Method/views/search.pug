@@ -1,0 +1,9 @@
+h1 Users List
+form(action="/user/search", method="get")
+  input(type="text", name="q")
+  button Search
+  br
+  a(href="/user/create") Add a new user
+ul
+  each employee in employees
+    li=employee.name + " - " + employee.phone
