@@ -1,0 +1,15 @@
+extends ./common
+block title
+  h1 Create new user
+block content
+  div.form-group
+    form(action="/users/create", method="post")
+      label.mr-2 Name
+      input(type="text", name="name")
+      br 
+      br
+      label.mr-2 Phone 
+      input(type="text", name="phone")
+      br 
+      br 
+      button.btn.btn-primary Submit
