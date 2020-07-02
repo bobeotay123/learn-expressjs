@@ -2,10 +2,10 @@
   "name": "expressjs",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./index.js",
   "scripts": {
-    "start": "nodemon --ignore *.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --ignore *.json"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +16,6 @@
     "pug": "^2.0.4"
   },
   "devDependencies": {
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.4"
   }
 }
