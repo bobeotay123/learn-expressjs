@@ -1,0 +1,38 @@
+extends ./common
+block link
+  a.btn.btn-primary(href="/") View Products
+block content
+  .container.d-flex.justify-content-center
+    form(action="/add", method="post", enctype="multipart/form-data", style="width: 700px;").form-group
+      .input-group.mb-3
+        .input-group-prepend
+          span#inputGroup-sizing-default.input-group-text Name
+        input.form-control(type='text', name="name")
+      .input-group.mb-3
+        .input-group-prepend
+          span#inputGroup-sizing-default.input-group-text Price
+        input.form-control(type='number', name="price")
+        .input-group-prepend
+          span#inputGroup-sizing-default.input-group-text.pl-2(style="width:20px") $
+      .input-group.mb-3
+        .input-group-prepend
+          span#inputGroup-sizing-default.input-group-text Description 
+        input.form-control(type='text', name="description")       
+      .custom-file
+        .input-group-prepend
+            span#inputGroup-sizing-default.input-group-text Description 
+        input#customFile.custom-file-input(type='file')
+        label.custom-file-label(for='customFile') Choose file
+      .d-flex.flex-row-reverse.pr-6
+        button(type="submit").btn.btn-primary.mt-3 Submit
+    //- if(errors != [])
+    //-   .d-flex.justify-content-center
+    //-     .list-group
+    //-       each error in errors
+    //-         li.list-group-item.w-2.mb-2=error
+  script.
+    // Add the following code if you want the name of the file appear on select
+    $(".custom-file-input").on("change", function() {
+      var fileName = $(this).val().split("\\\").pop();
+      $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
